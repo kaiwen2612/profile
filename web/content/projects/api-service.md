@@ -20,6 +20,8 @@ decisions:
 result: "TEMPLATE PLACEHOLDER — replace with a real, measurable result, e.g. cut median response time from 400ms to 90ms."
 learned: "TEMPLATE PLACEHOLDER — describe what was genuinely learned from the real project."
 order: 2
+architectureImage: "/projects/api-service-architecture.svg"
+architectureImageAlt: "Diagram showing a client sending requests to an API service, which reads from and writes to a database."
 ---
 
 **This is placeholder template content — replace with a real project case study before launch (spec §7.1).**

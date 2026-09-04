@@ -20,6 +20,8 @@ decisions:
 result: "TEMPLATE PLACEHOLDER — replace with a real, measurable result, e.g. reduced processing time by 40%."
 learned: "TEMPLATE PLACEHOLDER — describe what was genuinely learned from the real project."
 order: 1
+architectureImage: "/projects/data-processing-pipeline-architecture.svg"
+architectureImageAlt: "Diagram showing several data sources feeding a validation and normalization stage, then a transform and load stage, which lands data in a queryable store used for reporting."
 ---
 
 **This is placeholder template content — replace with a real project case study before launch (spec §7.1).**

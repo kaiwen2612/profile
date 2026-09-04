@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" width="1000" height="360" role="img" aria-labelledby="title desc">
+  <title id="title">Data processing pipeline architecture</title>
+  <desc id="desc">Several data sources feed a validation and normalization stage, then a transform stage, which lands data in a queryable store used for reporting.</desc>
+  <defs>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a" />
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="360" fill="#ffffff" />
+
+  <!-- Sources -->
+  <rect x="30" y="50" width="170" height="50" rx="8" fill="#f5f5f5" stroke="#1a1a1a" stroke-width="2" />
+  <text x="115" y="80" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#1a1a1a">Daily export</text>
+
+  <rect x="30" y="155" width="170" height="50" rx="8" fill="#f5f5f5" stroke="#1a1a1a" stroke-width="2" />
+  <text x="115" y="185" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#1a1a1a">Webhook events</text>
+
+  <rect x="30" y="260" width="170" height="50" rx="8" fill="#f5f5f5" stroke="#1a1a1a" stroke-width="2" />
+  <text x="115" y="290" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#1a1a1a">Manual upload</text>
+
+  <!-- Validate & normalize stage -->
+  <rect x="290" y="130" width="190" height="100" rx="8" fill="#f5f5f5" stroke="#1a1a1a" stroke-width="2" />
+  <text x="385" y="170" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#1a1a1a">Validate &amp;</text>
+  <text x="385" y="192" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#1a1a1a">normalize</text>
+  <text x="385" y="214" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#666666">quarantines bad records</text>
+
+  <!-- Transform / load stage -->
+  <rect x="560" y="130" width="190" height="100" rx="8" fill="#f5f5f5" stroke="#1a1a1a" stroke-width="2" />
+  <text x="655" y="170" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#1a1a1a">Transform &amp;</text>
+  <text x="655" y="192" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#1a1a1a">idempotent load</text>
+  <text x="655" y="214" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#666666">audit trail per batch</text>
+
+  <!-- Sink: queryable store -->
+  <rect x="830" y="140" width="150" height="80" rx="8" fill="#f5f5f5" stroke="#1a1a1a" stroke-width="2" />
+  <text x="905" y="175" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#1a1a1a">Queryable</text>
+  <text x="905" y="197" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#1a1a1a">store</text>
+
+  <!-- Arrows sources -> validate -->
+  <line x1="200" y1="75" x2="284" y2="150" stroke="#1a1a1a" stroke-width="2" marker-end="url(#arrow2)" />
+  <line x1="200" y1="180" x2="284" y2="180" stroke="#1a1a1a" stroke-width="2" marker-end="url(#arrow2)" />
+  <line x1="200" y1="285" x2="284" y2="210" stroke="#1a1a1a" stroke-width="2" marker-end="url(#arrow2)" />
+
+  <!-- Arrow validate -> transform -->
+  <line x1="480" y1="180" x2="554" y2="180" stroke="#1a1a1a" stroke-width="2" marker-end="url(#arrow2)" />
+
+  <!-- Arrow transform -> store -->
+  <line x1="750" y1="180" x2="824" y2="180" stroke="#1a1a1a" stroke-width="2" marker-end="url(#arrow2)" />
+</svg>
