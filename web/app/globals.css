@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ *
+ * Design tokens (see docs/style.md)
+ * ------------------------------------------------------------------ */
+:root {
+  /* Colour tokens */
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #666666;
+  --accent: #0066cc;
+  --border: #666666;
+
+  /* Type scale (minor third, base 16px) */
+  --font-size-xs: 16px;
+  --font-size-sm: 19px;
+  --font-size-md: 23px;
+  --font-size-lg: 28px;
+  --font-size-xl: 33px;
+  --font-size-2xl: 40px;
+
+  /* Spacing scale (4px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Self-hostable system font stack */
+  --app-font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ------------------------------------------------------------------ *
+ * Map tokens into the Tailwind v4 theme so `text-md`, `bg-bg`,
+ * `text-fg`, `border-border`, `p-5`, `font-sans` … resolve to them.
+ * ------------------------------------------------------------------ */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+
+  --text-xs: var(--font-size-xs);
+  --text-sm: var(--font-size-sm);
+  --text-md: var(--font-size-md);
+  --text-lg: var(--font-size-lg);
+  --text-xl: var(--font-size-xl);
+  --text-2xl: var(--font-size-2xl);
+
+  --spacing-1: var(--space-1);
+  --spacing-2: var(--space-2);
+  --spacing-3: var(--space-3);
+  --spacing-4: var(--space-4);
+  --spacing-5: var(--space-5);
+  --spacing-6: var(--space-6);
+  --spacing-7: var(--space-7);
+  --spacing-8: var(--space-8);
+
+  --font-sans: var(--app-font-sans);
+}
+
+/* ------------------------------------------------------------------ *
+ * Base element styles
+ * ------------------------------------------------------------------ */
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--app-font-sans);
+  font-size: var(--font-size-xs);
+  line-height: 1.6;
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
