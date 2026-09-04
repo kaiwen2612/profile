@@ -5,10 +5,12 @@ import {
   profileSchema,
   skillsSchema,
   achievementsSchema,
+  problemSolvingTeaserSchema,
   projectFrontmatterSchema,
   type Profile,
   type SkillGroup,
   type Achievement,
+  type ProblemSolvingTeaser,
   type ProjectFrontmatter,
 } from "./schemas";
 import { renderMarkdown } from "./markdown";
@@ -42,6 +44,14 @@ export function getAchievements(dir: string = DEFAULT_DIR): { items: Achievement
   }
   parsed.data.items.sort((a, b) => (a.date < b.date ? 1 : -1)); // newest first
   return parsed.data;
+}
+
+export function getProblemSolvingTeasers(dir: string = DEFAULT_DIR): ProblemSolvingTeaser[] {
+  const parsed = problemSolvingTeaserSchema.safeParse(readJson(dir, "problem-solving.json"));
+  if (!parsed.success) {
+    throw new Error(`Invalid content/problem-solving.json:\n${parsed.error.toString()}`);
+  }
+  return parsed.data.teasers;
 }
 
 export interface Project {

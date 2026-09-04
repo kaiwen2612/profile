@@ -35,6 +35,13 @@ export const achievementSchema = z.object({
 export type Achievement = z.infer<typeof achievementSchema>;
 export const achievementsSchema = z.object({ items: z.array(achievementSchema).min(1) });
 
+export const problemSolvingTeaserSchema = z.object({
+  teasers: z
+    .array(z.object({ title: z.string().min(1), teaser: z.string().min(1).max(280) }))
+    .min(1),
+});
+export type ProblemSolvingTeaser = z.infer<typeof problemSolvingTeaserSchema>["teasers"][number];
+
 export const projectFrontmatterSchema = z
   .object({
     title: z.string().min(1),
