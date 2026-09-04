@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { SkipLink } from "@/components/SkipLink";
+import { buildRootMetadata, personJsonLd } from "@/lib/metadata";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "Profile site",
-  description: "Personal profile site",
-};
+export const metadata: Metadata = buildRootMetadata();
 
 export default function RootLayout({
   children,
@@ -17,6 +15,11 @@ export default function RootLayout({
       <body>
         <SkipLink />
         {children}
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd()) }}
+        />
       </body>
     </html>
   );
