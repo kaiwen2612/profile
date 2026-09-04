@@ -6,17 +6,17 @@ problem: "TEMPLATE PLACEHOLDER — describe the real problem a real project solv
 solution: "TEMPLATE PLACEHOLDER — describe the real solution that was built."
 technologies:
   - name: "TEMPLATE: e.g. Python"
-    why: "TEMPLATE PLACEHOLDER — replace with the real reason this technology was chosen for the real project."
+    why: "TEMPLATE PLACEHOLDER — replace with the real reason Python was chosen for the real project."
   - name: "TEMPLATE: e.g. PostgreSQL"
-    why: "TEMPLATE PLACEHOLDER — replace with the real reason this technology was chosen for the real project."
+    why: "TEMPLATE PLACEHOLDER — replace with the real reason PostgreSQL was chosen for the real project."
   - name: "TEMPLATE: e.g. Docker"
-    why: "TEMPLATE PLACEHOLDER — replace with the real reason this technology was chosen for the real project."
+    why: "TEMPLATE PLACEHOLDER — replace with the real reason Docker was chosen for the real project."
 contribution: "TEMPLATE PLACEHOLDER — describe the real, specific contribution made to this project."
 decisions:
   - decision: "TEMPLATE PLACEHOLDER — describe a real technical decision made on the real project."
-    rejectedAlternative: "TEMPLATE PLACEHOLDER — describe the real alternative that was considered and rejected, and why."
+    rejectedAlternative: "TEMPLATE PLACEHOLDER — describe the real alternative that was considered and rejected for the first decision, and why."
   - decision: "TEMPLATE PLACEHOLDER — describe a second real technical decision."
-    rejectedAlternative: "TEMPLATE PLACEHOLDER — describe the real alternative that was considered and rejected, and why."
+    rejectedAlternative: "TEMPLATE PLACEHOLDER — describe the real alternative that was considered and rejected for the second decision, and why."
 result: "TEMPLATE PLACEHOLDER — replace with a real, measurable result, e.g. reduced processing time by 40%."
 learned: "TEMPLATE PLACEHOLDER — describe what was genuinely learned from the real project."
 order: 1
