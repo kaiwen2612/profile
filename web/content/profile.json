@@ -1,0 +1,16 @@
+{
+  "fullName": "Kai Wen Chang",
+  "degree": "BSc (Hons) Computing Science Graduate",
+  "identityLine": "Software Engineering · AI/ML · Data · Cloud",
+  "intro": "Replace this with a 1-2 sentence introduction — what you build and what you care about.",
+  "lookingFor": {
+    "roleTypes": ["Replace with target role types, e.g. Software Engineer"],
+    "domains": ["Replace with target domains, e.g. AI/ML"],
+    "location": "Replace with your location/remote preference"
+  },
+  "links": {
+    "email": "kaiwenc716@gmail.com",
+    "linkedin": "https://linkedin.com/in/REPLACE_ME",
+    "github": "https://github.com/REPLACE_ME"
+  }
+}

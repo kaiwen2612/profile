@@ -1,0 +1,24 @@
+{
+  "groups": [
+    {
+      "name": "Languages",
+      "context": "Core languages used across scripting, application, and systems-level work.",
+      "skills": ["Python", "Go", "Java", "Dart", "TypeScript"]
+    },
+    {
+      "name": "AI / Machine Learning",
+      "context": "Frameworks and libraries used to build, train, and evaluate machine learning models.",
+      "skills": ["PyTorch", "TensorFlow", "scikit-learn", "XGBoost"]
+    },
+    {
+      "name": "Cloud & Infrastructure",
+      "context": "Cloud services and containerization used to deploy and run applications.",
+      "skills": ["AWS (Lambda, S3, Step Functions)", "Docker"]
+    },
+    {
+      "name": "Web & Tooling",
+      "context": "Frameworks and tooling used to build REST APIs, web apps, and mobile apps, and to manage source code.",
+      "skills": ["React / Next.js", "Flutter", "REST API design", "Git"]
+    }
+  ]
+}
