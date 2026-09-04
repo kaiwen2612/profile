@@ -1,5 +1,5 @@
 ---
-title: "[TEMPLATE] Replace With a Real Project Name"
+title: "[TEMPLATE] Replace With a Real Project Name (Data Processing Pipeline)"
 slug: data-processing-pipeline
 summary: "TEMPLATE PLACEHOLDER — replace with a one-sentence summary of a real project before launch (spec §7.1)."
 problem: "TEMPLATE PLACEHOLDER — describe the real problem a real project solved."

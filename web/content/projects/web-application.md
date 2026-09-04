@@ -1,5 +1,5 @@
 ---
-title: "[TEMPLATE] Replace With a Real Project Name"
+title: "[TEMPLATE] Replace With a Real Project Name (Web Application)"
 slug: web-application
 summary: "TEMPLATE PLACEHOLDER — replace with a one-sentence summary of a real project before launch (spec §7.1)."
 problem: "TEMPLATE PLACEHOLDER — describe the real problem a real project solved."
