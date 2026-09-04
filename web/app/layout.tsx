@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { SkipLink } from "@/components/SkipLink";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import { buildRootMetadata, personJsonLd } from "@/lib/metadata";
 import "./globals.css";
 
@@ -14,7 +16,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <SkipLink />
+        <Navbar />
         {children}
+        <Footer />
         <script
           type="application/ld+json"
           suppressHydrationWarning
