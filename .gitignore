@@ -10,6 +10,10 @@ web/.vercel/
 # Go
 contact/contact
 contact/*.test
+contact/cover.out
+
+# Lighthouse CI
+web/.lighthouseci/
 
 # Env / OS
 .env
