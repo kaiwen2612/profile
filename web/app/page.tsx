@@ -6,6 +6,7 @@ import { SkillsSection } from "@/components/SkillsSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { ProblemSolvingTeasers } from "@/components/ProblemSolvingTeasers";
 import { AchievementsSection } from "@/components/AchievementsSection";
+import { CvSection } from "@/components/CvSection";
 
 export default function Home() {
   const profile = getProfile();
@@ -31,7 +32,10 @@ export default function Home() {
       <Section id="achievements" title="Achievements & Experience">
         <AchievementsSection items={achievements.items} />
       </Section>
-      {/* cv, contact added in later tasks */}
+      <Section id="cv" title="CV">
+        <CvSection />
+      </Section>
+      {/* contact added in a later task */}
     </main>
   );
 }
