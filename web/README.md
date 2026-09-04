@@ -20,6 +20,18 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Updating the CV
+
+When replacing the CV, keep the PDF and the HTML mirror in sync:
+
+1. Replace `web/public/cv.pdf` with the new PDF, keeping the filename `cv.pdf`
+   (the Footer and homepage CV section link to `/cv.pdf` directly).
+2. Update `web/app/cv/page.tsx` so the HTML `/cv` page mirrors the new PDF's
+   content (spec §4.6 — the HTML page exists for accessibility and SEO, and
+   should not drift from the PDF).
+3. Before merging, open both `/cv.pdf` and `/cv` side by side and confirm the
+   content (roles, dates, education) matches.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
