@@ -22,6 +22,7 @@ decisions:
     rejectedAlternative: "Accepting any uploaded image immediately, which was rejected to keep a content-moderation checkpoint in a product meant for public-facing influencer content."
 result: "Benchmarked against Hallo (a published research system) in an 18-participant realism study, the platform's videos were consistently rated less realistic on a 5-point scale: a measured gap against a state-of-the-art baseline, not an assumption. Generation time scaled with video duration (~25.5s for 10s, ~127s for 60s) but was unaffected by avatar image resolution (256×256 vs 512×512), and GPU memory stayed flat at 1.65GB regardless of length or resolution. A separate 12-participant usability study found 75% satisfied or very satisfied with the end-to-end flow (register, log in, generate a video)."
 learned: "Working hands-on with pre-trained computer-vision models gave a much deeper practical understanding of how talking-head generation actually works than reading the papers alone. Running the full Scrum process solo (product owner, developer, and everything between) was good, if artificial, rehearsal for team practice. The realism gap against Hallo was the clearest signal in the whole project: matching a dedicated research system's output needs either a stronger pre-trained backbone or fine-tuning on avatar-specific data, which the capstone timeline didn't allow."
+githubUrl: "https://github.com/kaiwen2612/avataryze-code"
 order: 1
 ---
 
