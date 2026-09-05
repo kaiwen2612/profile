@@ -21,9 +21,12 @@ static export and publishes it to GitHub Pages on every push to `main`.
 One-time setup (already done for this repo):
 
 1. Repo **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-2. Custom domain `kwen.dev` is set via `public/CNAME`. Point the domain's DNS at
-   GitHub Pages (four `A` records for the apex, or a `CNAME` record for `www`) —
-   see GitHub's "Managing a custom domain" docs.
+2. Custom domain `profile.kwen.dev` is set via `public/CNAME`. Point the subdomain
+   at GitHub Pages with one DNS record:
+
+       CNAME  profile  ->  kaiwen2612.github.io.
+
+   See GitHub's "Managing a custom domain" docs.
 
 To deploy manually without a push, run the workflow from the repo's **Actions** tab
 ("Deploy to GitHub Pages" → "Run workflow").

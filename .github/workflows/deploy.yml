@@ -35,7 +35,7 @@ jobs:
         run: pnpm build
         env:
           # Makes absolute URLs in metadata (Open Graph image, etc.) point at the real domain.
-          NEXT_PUBLIC_SITE_URL: https://kwen.dev
+          NEXT_PUBLIC_SITE_URL: https://profile.kwen.dev
 
       # Artifact-based Pages deploys don't run Jekyll, but this is a harmless safety net
       # so the _next/ folder is never stripped.
