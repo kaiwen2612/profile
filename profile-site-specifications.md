@@ -65,14 +65,13 @@ Two kinds of visitor, both served from the same pages:
 
 - A "how I solve problems" section with a couple of short write-ups.
 - An achievements/timeline section (certifications, awards, etc.).
-- A simple contact form (see §6) instead of just links.
 - Dark mode.
 
 **Not doing:**
 
 - Any database, CMS, or admin login — content is just files in the repo, edited directly.
 - User accounts, comments, or a blog engine.
-- A custom backend service. If the contact form needs server-side handling, use a hosted form provider (§6) rather than building and hosting one.
+- A contact form. Email (`mailto:`), LinkedIn and GitHub links cover this better than a form would: no third-party form service, no success/error states to build, no "where does this data go" question, and no `mailto:`-doesn't-work failure mode since LinkedIn is a no-client-needed fallback. A custom backend service is correspondingly unnecessary too — this is a static site with no server-side logic at all.
 - Heavy analytics — a simple, privacy-friendly pageview counter is optional, not required.
 - Multiple languages.
 
@@ -87,7 +86,7 @@ Two kinds of visitor, both served from the same pages:
 - **Skills** — grouped by category (e.g. Languages, AI/ML, Cloud, Web & Tooling), each group with one line of real context (*"Go — used to build REST APIs and CLI tools"*). No skill-percentage bars — they're not meaningful.
 - **Projects** — a card per project: name, one-line summary, main technologies, link to the full project page. If a project has a live demo or GitHub repo, link it; otherwise leave those links out rather than showing a dead one.
 - **CV** — a clearly visible "Download CV (PDF)" button.
-- **Contact** — email, LinkedIn, GitHub. A simple contact form if wanted (§6).
+- **Contact** — email (`mailto:` link), LinkedIn, GitHub. No contact form (see §3).
 
 ## Project pages (`/projects/<slug>`)
 
@@ -133,8 +132,7 @@ Keep it to one stack, one deploy target:
 | Language | TypeScript |
 | Styling | Tailwind CSS |
 | Content | Markdown/JSON files committed to the repo — no database, no CMS |
-| Hosting | One static host (Vercel or Netlify), custom domain optional |
-| Contact form (if used) | A hosted form provider (e.g. Formspree, Web3Forms) that the HTML form posts to directly — no custom backend to write, test, or deploy |
+| Hosting | Google Cloud — Firebase Hosting (static-site hosting, automatic HTTPS/CDN, `firebase deploy`), custom domain optional |
 
 **No separate backend service for this site.** If I want to showcase Go or another backend language, that's a separate, standalone project with its own repo, linked from here — it should not become infrastructure this site depends on to work.
 
