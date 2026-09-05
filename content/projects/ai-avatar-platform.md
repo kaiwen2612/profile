@@ -12,7 +12,7 @@ technologies:
   - name: "ffmpeg"
     why: "Extracted audio from the uploaded presenter video, then remuxed the generated animation with that audio into the final video."
   - name: "Redis"
-    why: "A lightweight in-memory store for user and avatar records, needing no schema migrations, which suited a Flask app built solo on a capstone timeline. The report doesn't document a formal comparison against a relational database."
+    why: "A lightweight in-memory store for user and avatar records, needing no schema migrations, which suited a Flask app built solo on a capstone timeline."
   - name: "Google Cloud Platform"
     why: "Hosted the server on a GCP compute instance, applying cloud-computing coursework directly to a real deployment."
 decisions:
