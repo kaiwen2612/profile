@@ -13,13 +13,20 @@ A small static profile site. See `profile-site-specifications.md` for what it is
 
 Static output goes to `out/`.
 
-## Deploy (Google Cloud — Firebase Hosting)
+## Deploy (GitHub Pages)
 
-1. Install the Firebase CLI if you don't have it: `npm install -g firebase-tools`
-2. `firebase login`
-3. Create a Firebase project (console.firebase.google.com) or use an existing Google Cloud project, and put its project ID in `.firebaserc`.
-4. `pnpm build`
-5. `firebase deploy --only hosting`
+Deployment is automatic. The workflow in `.github/workflows/deploy.yml` builds the
+static export and publishes it to GitHub Pages on every push to `main`.
+
+One-time setup (already done for this repo):
+
+1. Repo **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+2. Custom domain `kwen.dev` is set via `public/CNAME`. Point the domain's DNS at
+   GitHub Pages (four `A` records for the apex, or a `CNAME` record for `www`) —
+   see GitHub's "Managing a custom domain" docs.
+
+To deploy manually without a push, run the workflow from the repo's **Actions** tab
+("Deploy to GitHub Pages" → "Run workflow").
 
 ## Content
 
