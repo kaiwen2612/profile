@@ -11,7 +11,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
-    "lhci": "lhci autorun"
+    "lhci": "lhci autorun",
+    "check:links": "node scripts/check-links.mjs"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
