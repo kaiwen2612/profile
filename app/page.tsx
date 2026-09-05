@@ -40,29 +40,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="cv" className="mt-12">
-        <h2 className="text-2xl font-semibold">CV</h2>
-        <a href="/cv.pdf" download className="mt-2 inline-block py-2 underline">
-          Download CV (PDF)
-        </a>
-      </section>
-
-      <section id="contact" className="mt-12">
-        <h2 className="text-2xl font-semibold">Contact</h2>
-        <p className="mt-2">
-          <a href={`mailto:${profile.links.email}`} className="inline-block py-2 underline">
-            Email
-          </a>
-          <span className="mx-2">·</span>
-          <a href={profile.links.linkedin} className="inline-block py-2 underline">
-            LinkedIn
-          </a>
-          <span className="mx-2">·</span>
-          <a href={profile.links.github} className="inline-block py-2 underline">
-            GitHub
-          </a>
-        </p>
-      </section>
+      {/* CV download and contact links live in the site-wide Footer
+          (components/Footer.tsx) — no separate homepage section, so they
+          aren't said twice in a row at the bottom of this page. */}
     </main>
   );
 }
