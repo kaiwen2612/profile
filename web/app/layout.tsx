@@ -24,6 +24,11 @@ export default function RootLayout({
           suppressHydrationWarning
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd()) }}
         />
+        <script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token":"REPLACE_ME"}'
+        />
       </body>
     </html>
   );
