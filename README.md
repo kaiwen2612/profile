@@ -65,25 +65,34 @@ curl -s https://<your-app-name>.fly.dev/healthz   # expect: ok
 - Set env vars:
   - `NEXT_PUBLIC_SITE_URL=https://<your-domain>`
   - `NEXT_PUBLIC_CONTACT_API_URL=https://<your-app-name>.fly.dev/api/contact`
+  - `NEXT_PUBLIC_CF_BEACON_TOKEN=<your-cloudflare-web-analytics-token>` (optional —
+    only once analytics is set up; see step 4. Leave unset and the analytics
+    beacon script simply doesn't render — this is also what dev/CI do, so no
+    placeholder token or broken network call ever ships.)
 - Add the custom domain and confirm automatic HTTPS.
 - Confirm per-PR preview deployments are enabled (Vercel's default for a
   GitHub-imported project).
 
 ### 4. Wire the real origins into local config, then redeploy
 
-Two placeholders in this repo must be replaced with real values once the
+One placeholder in this repo must be replaced with a real value once the
 above exists:
 
 - `web/vercel.json` — the CSP `connect-src` directive has a literal
   placeholder `https://REPLACE_ME.fly.dev`. Replace it with your real
   Fly.io app origin from step 2 (e.g. `https://<your-app-name>.fly.dev`).
-- `web/app/layout.tsx` — the Cloudflare Web Analytics beacon has
-  `data-cf-beacon='{"token":"REPLACE_ME"}'`. Replace `REPLACE_ME` with the
-  real site token from the Cloudflare dashboard (Analytics & Logs → Web
-  Analytics → add a site) once analytics is set up. This token is not a
-  secret — it's fine to commit.
 
-Commit both changes and redeploy the site on Vercel.
+Commit that change and redeploy the site on Vercel.
+
+**Cloudflare Web Analytics:** unlike the CSP origin above, the analytics beacon
+token is set as the `NEXT_PUBLIC_CF_BEACON_TOKEN` Vercel env var (step 3), not
+hand-edited into `web/app/layout.tsx` — the beacon `<script>` only renders when
+that env var is non-empty (`web/lib/siteConfig.ts`). Get the real token from the
+Cloudflare dashboard (Analytics & Logs → Web Analytics → add a site) and set it
+in Vercel once analytics is set up; it is not a secret, but it still shouldn't be
+hardcoded, since a hardcoded/placeholder value would make the browser fire a
+real (and, with a placeholder, permanently failing) request on every page load
+in every environment, including local dev and CI.
 
 **JSON-LD CSP hash:** the site's `Person` structured-data block
 (`<script type="application/ld+json">` in `web/app/layout.tsx`) is allowed by
