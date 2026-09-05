@@ -1,15 +1,15 @@
 {
   "fullName": "Kai Wen Chang",
-  "identityLine": "Replace with your one-line professional identity",
-  "intro": "Replace with a 1-2 sentence introduction — what you build and what you care about.",
+  "identityLine": "Software Engineer · Data & Machine Learning",
+  "intro": "I'm a software engineer and data scientist building LLM evaluation tools, ML models, and full-stack applications — currently at GovTech, after internships spanning consulting, utilities, and applied AI.",
   "lookingFor": {
-    "roleTypes": ["Replace with role types you want"],
-    "domains": ["Replace with domains of interest"],
-    "location": "Replace with your location/remote preference"
+    "roleTypes": ["Replace with the type of roles you want (e.g. full-time, new grad)"],
+    "domains": ["Software Engineering", "Data Science & Machine Learning"],
+    "location": "Singapore"
   },
   "links": {
-    "email": "kaiwenc716@gmail.com",
+    "email": "chang_kaiwen_648@hotmail.com",
     "linkedin": "https://linkedin.com/in/REPLACE_ME",
-    "github": "https://github.com/REPLACE_ME"
+    "github": "https://github.com/kaiwen2612"
   }
 }

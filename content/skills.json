@@ -2,23 +2,23 @@
   "groups": [
     {
       "name": "Languages",
-      "context": "Used across scripting, application and systems-level work.",
-      "skills": ["Python", "Go", "Java", "TypeScript"]
+      "context": "Used across LLM tooling and APIs, data science work, and one low-level embedded project on a Raspberry Pi.",
+      "skills": ["Python", "JavaScript/TypeScript", "Java", "C#", "C", "HTML", "CSS", "Assembly (Raspberry Pi 4)"]
     },
     {
-      "name": "AI / Machine Learning",
-      "context": "Used to build and evaluate models.",
-      "skills": ["PyTorch", "TensorFlow", "scikit-learn"]
+      "name": "Data & ML",
+      "context": "Used to build classification models, evaluate LLM outputs, and run guardrail and analysis pipelines.",
+      "skills": ["Pandas", "NumPy", "scikit-learn", "XGBoost", "TensorFlow", "Jupyter Notebook", "Google Colab"]
     },
     {
-      "name": "Cloud & Infrastructure",
-      "context": "Used to deploy and run services.",
-      "skills": ["AWS (Lambda, S3, Step Functions)", "Docker"]
+      "name": "Web & Application",
+      "context": "Used to build full-stack web applications, a government chatbot proof of concept, and mobile apps.",
+      "skills": ["Node.js", "Express.js", "Angular", "Ionic", "Flask", "ASP.NET MVC", "ASP.NET Web API", "Android Studio"]
     },
     {
-      "name": "Web & Tooling",
-      "context": "Used to build and ship software.",
-      "skills": ["React / Next.js", "REST API design", "Git"]
+      "name": "Data Platforms",
+      "context": "Used for data pipelines, cluster migration, and business-intelligence reporting.",
+      "skills": ["MongoDB", "MySQL", "Talend for Big Data", "Apache Hive", "Hadoop", "Pig", "Tableau", "QlikView"]
     }
   ]
 }
