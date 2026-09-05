@@ -25,19 +25,27 @@ func mustEnv(k string) string {
 	return v
 }
 
-func newMux() *http.ServeMux {
+func newMux(d Deps) *http.ServeMux {
 	mux := http.NewServeMux()
 	mux.HandleFunc("GET /healthz", func(w http.ResponseWriter, _ *http.Request) {
 		_, _ = w.Write([]byte("ok"))
 	})
+	mux.Handle("POST /api/contact", ContactHandler(d))
 	return mux
 }
 
 func main() {
 	logger := slog.New(slog.NewJSONHandler(os.Stdout, nil))
+	d := Deps{
+		Mailer:  NewResendMailer(mustEnv("RESEND_API_KEY"), mustEnv("CONTACT_FROM"), mustEnv("CONTACT_TO")),
+		Limiter: NewFixedWindowLimiter(5, time.Minute),
+		Origin:  mustEnv("SITE_ORIGIN"),
+		Logger:  logger,
+		Alert:   func(err error) { logger.Error("ALERT contact send_failed", "err", err) },
+	}
 	srv := &http.Server{
 		Addr:         ":" + envOr("PORT", "8080"),
-		Handler:      newMux(),
+		Handler:      newMux(d),
 		ReadTimeout:  10 * time.Second,
 		WriteTimeout: 15 * time.Second,
 	}
@@ -48,7 +56,6 @@ func main() {
 		}
 	}()
 	logger.Info("listening", "addr", srv.Addr)
-
 	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt)
 	defer stop()
 	<-ctx.Done()
