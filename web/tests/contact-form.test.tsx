@@ -31,6 +31,17 @@ test("happy path shows a success status and clears the form", async () => {
   expect(await screen.findByRole("status")).toHaveTextContent(/sent/i);
 });
 
+test("privacy note stays visible after a successful submission", async () => {
+  vi.stubGlobal("fetch", mockFetch(200, { ok: true }));
+  render(<ContactForm ownerEmail={OWNER} />);
+  await userEvent.type(screen.getByLabelText(/name/i), "Ada");
+  await userEvent.type(screen.getByLabelText(/email/i), "ada@example.com");
+  await userEvent.type(screen.getByLabelText(/message/i), "I have a role you may like.");
+  await userEvent.click(screen.getByRole("button", { name: /send message/i }));
+  await screen.findByRole("status");
+  expect(screen.getByText(/emailed to me and not stored/i)).toBeInTheDocument();
+});
+
 test("server failure shows an alert AND a prefilled mailto fallback", async () => {
   vi.stubGlobal("fetch", mockFetch(502, { ok: false, error: "send_failed" }));
   render(<ContactForm ownerEmail={OWNER} />);

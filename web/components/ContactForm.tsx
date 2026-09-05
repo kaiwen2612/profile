@@ -49,18 +49,19 @@ export function ContactForm({ ownerEmail }: { ownerEmail: string }) {
         for (const k of ["name", "email", "message"] as Field[]) {
           if (data.fields[k]) mapped[k] = "Please check this field.";
         }
-        setErrors(mapped);
-        setStatus("idle");
-        return;
+        if (Object.keys(mapped).length) {
+          setErrors(mapped);
+          setStatus("idle");
+          return;
+        }
+        // 400 with a fields object we couldn't map to a known field (e.g. a
+        // malformed-request response) — fall through to the generic error
+        // state so the failure is still visible to the user.
       }
       setStatus("error");
     } catch {
       setStatus("error");
     }
-  }
-
-  if (status === "success") {
-    return <p role="status">Thanks — your message has been sent. I’ll be in touch soon.</p>;
   }
 
   const mailto =
@@ -92,34 +93,40 @@ export function ContactForm({ ownerEmail }: { ownerEmail: string }) {
   };
 
   return (
-    <form onSubmit={onSubmit} noValidate>
-      {status === "error" && (
-        <p role="alert">
-          Something went wrong sending your message. Please email me directly at{" "}
-          <a href={mailto}>{ownerEmail}</a>.
-        </p>
+    <div>
+      {status === "success" ? (
+        <p role="status">Thanks — your message has been sent. I’ll be in touch soon.</p>
+      ) : (
+        <form onSubmit={onSubmit} noValidate>
+          {status === "error" && (
+            <p role="alert">
+              Something went wrong sending your message. Please email me directly at{" "}
+              <a href={mailto}>{ownerEmail}</a>.
+            </p>
+          )}
+          <div aria-hidden="true" style={{ position: "absolute", left: "-9999px" }}>
+            <label htmlFor="website">Website</label>
+            <input
+              id="website"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              value={values.website}
+              onChange={(e) => setValues({ ...values, website: e.target.value })}
+            />
+          </div>
+          {field("name", "Name", "input")}
+          {field("email", "Email", "input")}
+          {field("message", "Message", "textarea")}
+          <button type="submit" disabled={status === "submitting"}>
+            {status === "submitting" ? "Sending…" : "Send message"}
+          </button>
+        </form>
       )}
-      <div aria-hidden="true" style={{ position: "absolute", left: "-9999px" }}>
-        <label htmlFor="website">Website</label>
-        <input
-          id="website"
-          name="website"
-          tabIndex={-1}
-          autoComplete="off"
-          value={values.website}
-          onChange={(e) => setValues({ ...values, website: e.target.value })}
-        />
-      </div>
-      {field("name", "Name", "input")}
-      {field("email", "Email", "input")}
-      {field("message", "Message", "textarea")}
       <p>
         What you send (name, email, message) is emailed to me and not stored by this site. Prefer
         email? Write to me directly at {ownerEmail}.
       </p>
-      <button type="submit" disabled={status === "submitting"}>
-        {status === "submitting" ? "Sending…" : "Send message"}
-      </button>
-    </form>
+    </div>
   );
 }
