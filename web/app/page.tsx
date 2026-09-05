@@ -7,6 +7,7 @@ import { ProjectsSection } from "@/components/ProjectsSection";
 import { ProblemSolvingTeasers } from "@/components/ProblemSolvingTeasers";
 import { AchievementsSection } from "@/components/AchievementsSection";
 import { CvSection } from "@/components/CvSection";
+import { ContactSection } from "@/components/ContactSection";
 
 export default function Home() {
   const profile = getProfile();
@@ -35,7 +36,9 @@ export default function Home() {
       <Section id="cv" title="CV">
         <CvSection />
       </Section>
-      {/* contact added in a later task */}
+      <Section id="contact" title="Contact">
+        <ContactSection profile={profile} />
+      </Section>
     </main>
   );
 }
