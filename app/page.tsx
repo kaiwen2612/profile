@@ -16,7 +16,7 @@ export default function Home() {
 
       <section id="looking-for" className="mt-12">
         <h2 className="text-2xl font-semibold">What I&apos;m Looking For</h2>
-        <p className="mt-2">
+        <p className="mt-2 max-w-prose">
           {profile.lookingFor.roleTypes.join(", ")} — {profile.lookingFor.domains.join(", ")} —{" "}
           {profile.lookingFor.location}
         </p>
@@ -42,7 +42,7 @@ export default function Home() {
 
       <section id="cv" className="mt-12">
         <h2 className="text-2xl font-semibold">CV</h2>
-        <a href="/cv.pdf" download className="mt-2 inline-block underline">
+        <a href="/cv.pdf" download className="mt-2 inline-block py-2 underline">
           Download CV (PDF)
         </a>
       </section>
@@ -50,15 +50,15 @@ export default function Home() {
       <section id="contact" className="mt-12">
         <h2 className="text-2xl font-semibold">Contact</h2>
         <p className="mt-2">
-          <a href={`mailto:${profile.links.email}`} className="underline">
+          <a href={`mailto:${profile.links.email}`} className="inline-block py-2 underline">
             Email
           </a>
           <span className="mx-2">·</span>
-          <a href={profile.links.linkedin} className="underline">
+          <a href={profile.links.linkedin} className="inline-block py-2 underline">
             LinkedIn
           </a>
           <span className="mx-2">·</span>
-          <a href={profile.links.github} className="underline">
+          <a href={profile.links.github} className="inline-block py-2 underline">
             GitHub
           </a>
         </p>

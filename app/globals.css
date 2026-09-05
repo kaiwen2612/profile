@@ -34,3 +34,20 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Minimal spacing for the case-study body rendered from Markdown.
+   No typography plugin — just enough rhythm to read comfortably. */
+.case-study-body h2 {
+  margin-top: 2rem;
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+}
+.case-study-body p,
+.case-study-body ul,
+.case-study-body ol {
+  margin-top: 0.75rem;
+}
+.case-study-body li {
+  margin-left: 1.25rem;
+  list-style: disc;
+}

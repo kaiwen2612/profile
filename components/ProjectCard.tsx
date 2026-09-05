@@ -9,16 +9,16 @@ export function ProjectCard({ project }: { project: Project }) {
       <p className="mt-2 text-sm text-[var(--muted)]">
         {project.technologies.map((t) => t.name).join(" · ")}
       </p>
-      <Link href={`/projects/${project.slug}/`} className="mt-2 inline-block underline">
+      <Link href={`/projects/${project.slug}/`} className="mt-2 inline-block py-2 underline">
         Read the full case study
       </Link>
       {project.githubUrl && (
-        <a href={project.githubUrl} className="ml-4 underline">
+        <a href={project.githubUrl} className="ml-4 inline-block py-2 underline">
           GitHub
         </a>
       )}
       {project.demoUrl && (
-        <a href={project.demoUrl} className="ml-4 underline">
+        <a href={project.demoUrl} className="ml-4 inline-block py-2 underline">
           Live demo
         </a>
       )}
