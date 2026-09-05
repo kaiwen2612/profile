@@ -30,7 +30,7 @@ func newMux(d Deps) *http.ServeMux {
 	mux.HandleFunc("GET /healthz", func(w http.ResponseWriter, _ *http.Request) {
 		_, _ = w.Write([]byte("ok"))
 	})
-	mux.Handle("POST /api/contact", ContactHandler(d))
+	mux.Handle("/api/contact", ContactHandler(d))
 	return mux
 }
 
