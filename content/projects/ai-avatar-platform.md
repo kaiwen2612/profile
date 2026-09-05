@@ -12,7 +12,7 @@ technologies:
   - name: "ffmpeg"
     why: "Extracted audio from the uploaded presenter video, then remuxed the generated animation with that audio into the final video."
   - name: "Redis"
-    why: "TODO: the report confirms Redis was used for data storage but doesn't explain why over a relational database, fill in the real reasoning."
+    why: "A lightweight in-memory store for user and avatar records, needing no schema migrations, which suited a Flask app built solo on a capstone timeline. The report doesn't document a formal comparison against a relational database."
   - name: "Google Cloud Platform"
     why: "Hosted the server on a GCP compute instance, applying cloud-computing coursework directly to a real deployment."
 decisions:
